@@ -16,91 +16,41 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 
 
-public class RegisterView extends FormLayout implements View{
+public class UiForm extends FormLayout {
 
 	@PropertyId("email")
-	private TextField tfEmail;
+	private TextField tfShopname;
 	
-	@PropertyId("password")
-	private PasswordField tfPassword;
+
+	private TextField tfUrl1 = new TextField("Url");
+	private TextField tfUrl2 = new TextField("Url"); 
+	private TextField tfUrl3 = new TextField("Url");
 	
-	@PropertyId("retype")
-	private PasswordField tfRetype;
 	
-	private CheckBox cbAccept;
-	private Button btnRegister;
-	private Label lbError;
-	
-	LoginData logData;
-	private BeanFieldGroup<LoginData> registerFieldGroup;
-	
-	public RegisterView() {
-		logData = new LoginData();
+	public UiForm() {
 		buildLayout();
 	    initLayout();
 	}
 	
 	private void buildLayout(){
-		registerFieldGroup = new BeanFieldGroup<>(LoginData.class);
-	    registerFieldGroup.buildAndBindMemberFields(this);
-	    registerFieldGroup.setItemDataSource(logData);
-	    
-	    tfEmail = new TextField();
-	    tfPassword = new PasswordField();
-	    tfRetype = new PasswordField();
-	    cbAccept = new CheckBox();
-	    btnRegister = new Button();
-	    lbError = new Label();
-	    
-	    addComponents(tfEmail, tfPassword, tfRetype, cbAccept, btnRegister, lbError);
+
+		addComponents(tfShopname, tfUrl1, tfUrl2, tfUrl3);
 		setSpacing(true);
 	    setMargin(true);
+		
 	}
 	
 	private void initLayout(){
-	      btnRegister.addClickListener(event -> buttonClicked());
-	      
 
-	      tfEmail.addValidator(new EmailValidator("It's not a correct email."));
-	      tfEmail.focus();
-	    
-	      tfEmail.setCaption("Email: ");
-	      
-	      tfPassword.setCaption("Password: ");
-	      
-	      tfRetype.setCaption("Retype password: ");
-	      
-	      cbAccept.setCaption("I accept terms and conditions of using this Page.");
-	      
-	      btnRegister.setCaption("Register");
 
 	      
 
-	   }
+	 }
 	
-	@Override
-	public void enter(ViewChangeEvent event) {
-		
-		
-	}
 	
 	
 	private void buttonClicked() { 
-		
-		try{
-			registerFieldGroup.commit();
-			lbError.setValue("lol");
-			if(!cbAccept.isEmpty()){
-			getUI().getNavigator().navigateTo("settings");
-			}else{
-				lbError.setValue("failed hahasadfdsfdsaf");
-			}
-			
-		}catch(FieldGroup.CommitException e) {
-	         System.out.println("Invalid data!");
-	         lbError.setValue("läuft nicht");
-	   		}
-		
+
 	 }
 
 }
