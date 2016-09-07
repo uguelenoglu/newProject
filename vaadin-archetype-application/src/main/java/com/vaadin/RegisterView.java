@@ -93,7 +93,7 @@ public class RegisterView extends FormLayout implements View{
 			if(!cbAccept.isEmpty()){
 			getUI().getNavigator().navigateTo("settings");
 			}else{
-				lbError.setValue("failed");
+				lbError.setValue("failed hahasadfdsfdsaf");
 			}
 			
 		}catch(FieldGroup.CommitException e) {
