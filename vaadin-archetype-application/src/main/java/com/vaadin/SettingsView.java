@@ -9,6 +9,7 @@ import com.vaadin.ui.VerticalLayout;
 
 public class SettingsView extends VerticalLayout implements View{
 	
+	private String name;
 	
 	private TextField email = new TextField("Your email: ");
 	private TextField username = new TextField("Your username: ");
