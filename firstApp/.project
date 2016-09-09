@@ -20,4 +20,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>bild1.jpg</name>
+			<type>1</type>
+			<location>/home/uguelenoglu/Bilder/bild1.jpg</location>
+		</link>
+	</linkedResources>
 </projectDescription>
