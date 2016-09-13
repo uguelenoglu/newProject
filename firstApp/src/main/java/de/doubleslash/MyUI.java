@@ -1,7 +1,11 @@
 package de.doubleslash;
 
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
 import com.vaadin.annotations.Theme;
+import com.vaadin.server.Page;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 
 
@@ -23,8 +27,16 @@ public class MyUI extends UI {
 
 	@Override
     protected void init(VaadinRequest vaadinRequest) {
-    	UiForm form = new UiForm();
-    	setContent(form);
+    	UiForm form;
+		try {
+			form = new UiForm();
+			setContent(form);
+		} catch (ConfigurationException e) {
+			e.printStackTrace();
+		}catch(NullPointerException e){
+			new Notification("Properties file could not be founded! App can not start!", Notification.Type.ERROR_MESSAGE).show(Page.getCurrent());
+		}
+    	
     }
    
 }

@@ -1,5 +1,6 @@
-de/doubleslash/UiForm.class
 de/doubleslash/Data.class
+de/doubleslash/ApplicationConfigurationFactory.class
 de/doubleslash/MyUI.class
-de/doubleslash/Uploader.class
 de/doubleslash/SettingsView.class
+de/doubleslash/UiForm.class
+de/doubleslash/Uploader.class
